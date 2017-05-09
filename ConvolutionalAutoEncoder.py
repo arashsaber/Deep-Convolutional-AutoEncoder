@@ -4,9 +4,6 @@ Deep Convolutional Autoencoder with TensorFlow
 Arash Saber Tehrani - May 2017
 
 """
-# If you are running on mac and with CPU
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 #   ---------------------------------
 # import required packages
 import numpy as np
@@ -48,27 +45,6 @@ def conv2d(input, name, kshape, strides=[1, 1, 1, 1]):
 # ---------------------------------
 def deconv2d(input, name, kshape, n_outputs, strides=[1, 1]):
     with tf.name_scope(name):
-        '''
-        # Note on output shape
-        #output = (input - filter + stride) // stride  # VALID
-        #output = (input + stride - 1) // stride  # SAME
-        W = tf.get_variable(name='w_' + name,
-                            shape=kshape,
-                            initializer=tf.contrib.layers.xavier_initializer(uniform=False))
-        b = tf.get_variable(name='b_' + name,
-                            shape=[kshape[2]],
-                            initializer=tf.contrib.layers.xavier_initializer(uniform=False))
-        # This is really important to pass dynamic size to deconv layer
-        #output_shape = tf.stack([tf.shape(input)[0],input.shape[1],input.shape[2],kshape[2]])
-        output_shape = input.shape.as_list()
-        output_shape[0] = batch_size
-        output_shape[3] = kshape[2]
-        out = tf.nn.conv2d_transpose(input, W,
-                                     output_shape=output_shape,
-                                     strides=strides, padding='SAME')
-        out = tf.nn.bias_add(out, b)
-        out = tf.nn.relu(out)
-        '''
         out = tf.contrib.layers.conv2d_transpose(input,
                                                  num_outputs= n_outputs,
                                                  kernel_size=kshape,
