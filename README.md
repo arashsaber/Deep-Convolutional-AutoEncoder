@@ -13,6 +13,7 @@ coder part:
   - fully connected
   - drop out
   - fully connected
+
 Decoder part:
   - fully connected
   - drop out
