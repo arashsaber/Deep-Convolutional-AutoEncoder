@@ -1,7 +1,7 @@
 # Deep-Convolutional-AutoEncoder
 
 This is a tutorial on creating a deep convolutional autoencoder with tensorflow.
-The goal of the tutorial is to provide a simple template for convolutional autoencoders. Also, I value the use of tensorboard, and I hate it when the resulted graph and parameters of the model are not presented clearly in the tensorboard. Here, beside the main goal, I do my best to create a nice looking graph of the network on the tensorboard. The complete code can be found in the ConvolutionalAutoEncoder.py.
+The goal of the tutorial is to provide a simple template for convolutional autoencoders. Also, I value the use of tensorboard, and I hate it when the resulted graph and parameters of the model are not presented clearly in the tensorboard. Here, beside the main goal, I do my best to create a nice looking graph of the network on the tensorboard. The complete code can be found in the ConvolutionalAutoEncoder.py, further, brief explanation is presented in the wiki.
 
 The layers are as follows:
 
